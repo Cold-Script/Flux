@@ -87,7 +87,7 @@ end
 
 
 
-function Flux:Window(text, bottom,mainclr,toclose)
+function Flux:Window(text, bottom, mainclr,toclose)
 	CloseBind = toclose or Enum.KeyCode.RightControl
 	PresetColor = mainclr or Color3.fromRGB(66, 134, 255)
 	local fs = false
@@ -221,6 +221,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		local NotificationBase = Instance.new("TextButton")
 		local NotificationBaseCorner = Instance.new("UICorner")
 		local NotificationFrame = Instance.new("Frame")
+                local UiStroke = Instance.new("UIStroke")
 		local NotificationFrameCorner = Instance.new("UICorner")
 		local NotificationFrameGlow = Instance.new("ImageLabel")
 		local NotificationTitle = Instance.new("TextLabel")
@@ -252,6 +253,11 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		NotificationFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 		NotificationFrame.Size = UDim2.new(0, 0, 0, 0)
 
+                UiStroke.Color = PresetColor
+                UiStroke.Thickness = 4
+                UiStroke.Transparency = 0.3
+                UiStroke.Parent = NotificationFrame
+
 		NotificationFrameCorner.CornerRadius = UDim.new(0, 5)
 		NotificationFrameCorner.Name = "NotificationFrameCorner"
 		NotificationFrameCorner.Parent = NotificationFrame
@@ -276,7 +282,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 		NotificationTitle.Position = UDim2.new(0.0400609747, 0, 0.0761325806, 0)
 		NotificationTitle.Size = UDim2.new(0, 111, 0, 34)
 		NotificationTitle.Font = Enum.Font.GothamBold
-		NotificationTitle.Text = Title.Text .. " | NOTIFICATION"
+		NotificationTitle.Text = Title.Text .. " | Notification"
 		NotificationTitle.TextColor3 = Color3.fromRGB(255, 255, 255)
 		NotificationTitle.TextSize = 24.000
 		NotificationTitle.TextXAlignment = Enum.TextXAlignment.Left
