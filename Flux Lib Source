@@ -92,6 +92,7 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	PresetColor = mainclr or Color3.fromRGB(66, 134, 255)
 	local fs = false
 	local MainFrame = Instance.new("Frame")
+        local UiStroke = Instance.new("UIStroke")
 	local MainCorner = Instance.new("UICorner")
 	local LeftFrame = Instance.new("Frame")
 	local LeftCorner = Instance.new("UICorner")
@@ -110,6 +111,11 @@ function Flux:Window(text, bottom,mainclr,toclose)
 	MainFrame.ClipsDescendants = true
 	MainFrame.Position = UDim2.new(0.5, 0, 0.5, 0)
 	MainFrame.Size = UDim2.new(0, 0, 0, 0)
+
+        UiStroke.Color = mainclr
+        UiStroke.Thickness = 4
+        UiStroke.Transparency = 0.3
+        UiStroke.Parent = MainFrame
 
 	MainCorner.CornerRadius = UDim.new(0, 5)
 	MainCorner.Name = "MainCorner"
