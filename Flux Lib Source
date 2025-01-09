@@ -88,7 +88,11 @@ end
 
 
 function Flux:Window(text, bottom, mainclr,toclose)
-        FluxLib:Destroy()
+        for i,v in pairs(game.CoreGui:GetDescendants()) do
+        if v.Name == "FluxLib" then
+	v:Destroy()
+	end
+	end
 	CloseBind = toclose or Enum.KeyCode.RightControl
 	PresetColor = mainclr or Color3.fromRGB(66, 134, 255)
 	local fs = false
