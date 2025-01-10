@@ -412,8 +412,6 @@ function Flux:Window(text, bottom, mainclr,toclose)
 			TweenInfo.new(.3, Enum.EasingStyle.Quad, Enum.EasingDirection.Out),
 			{BackgroundTransparency = 0}
 		):Play()
-        wait(3)
-        NotificationBase:Destroy()
 	end
 	local Tabs = {}
 	function Tabs:Tab(text,ico)
